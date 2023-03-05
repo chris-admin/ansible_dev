@@ -12,7 +12,7 @@
 - **Connect to:** <br> docker exec -it \<CONTAINER> bash
 
 ### docker-compose.yml
-**dockerfile** is a way to modify the container OS (e.g. yum install, edit some config files etc.) The Host container will run **SSHD** via **CMD**, so the container will not shut down immediately. The **controller-node** need the option **tty: true** otherwise the container will stop after the booting process. **ansible.cfg** must be located in a directory not accessible by other users, so you have to change the permissions of the volume **./ansible:/ansible:0770**.
+**dockerfile** is a way to modify the container OS (e.g. yum install, edit some config files etc.) The Host container will run **SSHD** via **CMD**, so the container will not shut down immediately. The **controller-node** need the option **tty: true** otherwise the container will stop after the booting process. **ansible.cfg** must be located in a directory not accessible by other users, so you have to change the permissions of the volume. I did not find a smart way than add it to the .bash.rc.
 
 ### Todo
 - Build a key generator to automate the process
