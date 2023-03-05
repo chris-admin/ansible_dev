@@ -1,0 +1,7 @@
+---
+- name: Just a little proof everything is rdy to go
+  hosts: server
+
+  tasks:
+  - name: nothing just a proof
+    ping:

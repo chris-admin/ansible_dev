@@ -8,3 +8,5 @@ COPY ssh/ssh_private /root/.ssh/id_rsa
 RUN chown -R root:root /root/.ssh/id_rsa
 RUN chmod 0600 /root/.ssh/id_rsa
 RUN sed -i 's/#   StrictHostKeyChecking ask/StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+
+# fixing the permissions for ansible.cfg
