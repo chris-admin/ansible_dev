@@ -8,7 +8,7 @@
 - ssh/ssh_public
 
 **Container management**
-- Start: docker-compose.exe up --build -d
+- Start: <br> docker-compose.exe up --build -d
 - Stop: <br> docker-compose.exe down
 - Connect to: <br> docker exec -it \<CONTAINER> bash
 
