@@ -1,0 +1,10 @@
+FROM rockylinux/rockylinux:latest
+RUN yum -y install net-tools
+RUN yum -y install epel-release
+RUN yum -y install ansible
+
+# SSH Key
+COPY ssh/ssh_private /root/.ssh/id_rsa
+RUN chown -R root:root /root/.ssh/id_rsa
+RUN chmod 0600 /root/.ssh/id_rsa
+RUN sed -i 's/#   StrictHostKeyChecking ask/StrictHostKeyChecking no/g' /etc/ssh/ssh_config

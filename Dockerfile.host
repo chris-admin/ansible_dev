@@ -1,0 +1,13 @@
+FROM rockylinux/rockylinux:latest
+RUN yum -y install net-tools
+RUN yum -y install openssh-server
+RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
+RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
+RUN ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N ''
+
+# SSH Key
+COPY ssh/ssh_public /root/.ssh/authorized_keys
+RUN chown -R root:root /root/.ssh/authorized_keys
+RUN rm -f /run/nologin
+
+CMD ["/usr/sbin/sshd", "-D"]

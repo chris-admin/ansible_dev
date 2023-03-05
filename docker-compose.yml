@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  
+  controller:
+    build:
+      context: .
+      dockerfile: Dockerfile.controller
+    hostname: controller
+    volumes:
+      - ./ansible:/ansible
+    tty: true
+
+  hosta:
+    build:
+      context: .
+      dockerfile: Dockerfile.host
+    hostname: hosta
+    
