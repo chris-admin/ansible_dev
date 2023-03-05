@@ -3,12 +3,12 @@ version: '3'
 services:
   
   controller:
-    volumes:
-      - ./ansible:/ansible:0770
     build:
       context: .
       dockerfile: Dockerfile.controller
     hostname: controller
+    volumes:
+      - ./ansible:/ansible:0770
     tty: true
 
   hosta:
